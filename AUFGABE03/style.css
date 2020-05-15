@@ -23,6 +23,8 @@ body{
 .circle{
     position: center;
     display: block;
+    margin: -35px auto;
+    width: 800px
 }
 
 h1{
