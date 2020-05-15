@@ -4,7 +4,7 @@ body{
     text-align: center;
 }
 
-.myNav {
+.myNavi {
     display: inline-block;
     background: #000000;
     padding: 5px 8px 5px 8px;
@@ -15,8 +15,13 @@ body{
     z-index: 9999; 
 }
 
+.myNavi2{
+    border-right: solid 1px white;
+
+}
+
 .circle{
-    position: static;
+    position: center;
     display: block;
 }
 
@@ -24,7 +29,14 @@ h1{
     font-size: 160px;
     background-image: url(bg.png);
     background-clip: text;
+    -webkit-animation-clip: text;
     color: transparent;
+    letter-spacing: -17px;
+    position: relative;
+    bottom: 410px
+}
+
+ .text{
     margin: auto;
     width: 15%;
     border: 3px;
@@ -34,4 +46,5 @@ h1{
     position: relative;
     bottom: 590px;
     left: 100px;
+    text-align: left;
 }
