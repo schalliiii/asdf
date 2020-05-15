@@ -15,6 +15,10 @@ body{
     z-index: 9999; 
 }
 
+.myNavi1{
+    border-right: solid 1px white;
+}
+
 .myNavi2{
     border-right: solid 1px white;
 
@@ -39,6 +43,11 @@ h1{
 }
 
  .text{
+    letter-spacing: 2px;
+    background-image: url(bg.png);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
     margin: auto;
     width: 15%;
     border: 3px;
