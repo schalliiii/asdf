@@ -1,8 +1,37 @@
+body{
+    background-image: url(bg.png);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
 .myNav {
     display: inline-block;
-    background: black;
-    color: white;
+    background: #000000;
     padding: 5px 8px 5px 8px;
     position: fixed;
-    border-radius: 10px; 
+    right: 0px;
+    top: 0px;
+    border-radius: 0px 0px 10px 10px;
+    z-index: 9999; 
+}
+
+.circle{
+    position: static;
+    display: block;
+}
+
+h1{
+    font-size: 160px;
+    background-image: url(bg.png);
+    background-clip: text;
+    color: transparent;
+    margin: auto;
+    width: 15%;
+    border: 3px;
+    padding: 10px;
+    font-size: 23px;
+    text-align: left;
+    position: relative;
+    bottom: 590px;
+    left: 100px;
 }
