@@ -6,7 +6,7 @@ body{
 .social1{
     position: absolute;       
     size: 10%;
-    left: 655px; top: 310px;
+    left: 1235px; top: 310px;
     z-index: 9999;
 }
 
@@ -137,7 +137,7 @@ a.grau {
 .Datenschutz{
     font-size: 10px;
     color: lightgray;
-    margin-left: 200px;
+    margin-left: 775px;
     text-align: left;
 }
 
