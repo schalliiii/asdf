@@ -1,7 +1,13 @@
 body{
     background-image: url(bg.png);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
     text-align: center;
+}
+.social1{
+    position: absolute;       
+    size: 10%;
+    left: 655px; top: 310px;
+    z-index: 9999;
 }
 
 .myNavi {
@@ -24,6 +30,35 @@ body{
 
 }
 
+a:link, a:visited {
+   text-decoration: none;
+   color: white;
+}
+
+a:hover{
+    color: teal;
+}
+
+a.active{
+    color: teal;
+    text-decoration: underline;
+}
+
+div a.activePage1{
+    color: teal;
+    font-weight: bolder;
+    border-right: solid 1px white;
+}
+
+div a.activePage2{
+    color: teal;
+    font-weight: bolder;
+}
+
+.social:hover{
+    opacity: 0.5;
+}
+
 .circle{
     position: center;
     display: block;
@@ -31,31 +66,90 @@ body{
     width: 800px
 }
 
-h1{
-    font-size: 160px;
-    background-image: url(bg.png);
-    background-clip: text;
-    -webkit-animation-clip: text;
-    color: transparent;
-    letter-spacing: -17px;
+.fotografie{
+    color: teal;
+    font-size: 15px;
     position: relative;
-    bottom: 410px
+    right: 325px;
+    position: left;
 }
 
- .text{
-    letter-spacing: 2px;
-    background-image: url(bg.png);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    margin: auto;
-    width: 15%;
-    border: 3px;
-    padding: 10px;
-    font-size: 23px;
-    text-align: left;
+.videografie{
+    color: teal;
+    font-size: 15px;
     position: relative;
-    bottom: 590px;
-    left: 100px;
+    right: 329px;
+}
+
+.fotos{
+    position: relative
+    bottom 480px;
+    right: 270px;
+
+}
+
+.ME{
+    color: teal;
+    font-size: 15px;
+    position: relative;
+    right: 344px;
+}
+
+
+.Kontakt{
+    color: teal;
+    font-size: 15px;
+    position: relative;
+    right: 416px;
+}
+
+input[type=text] {
+    width: 200px;
+    padding: 5px;
+    margin-right: 780px;
+    box-sizing: border-box;
+    border: none;
+    background-color: lightgray;
+    font-size: 10px;
+    font-weight: bolder;
+}
+
+input[type=text2] {
+    width: 300px;
+    padding: 5px 5px 20px 5px;
+    margin-right: 680px;
+    box-sizing: border-box;
+    border: none;
+    background-color: lightgray;
+    font-size: 10px;
+    font-weight: bolder;
+}
+
+input::-webkit-input-placeholder {
+    color: white !important;
+}
+
+a.grau {
+    text-decoration: underline;
+    color: lightgray
+}
+
+.Datenschutz{
+    font-size: 10px;
+    color: lightgray;
+    margin-left: 200px;
     text-align: left;
+}
+
+input[type=button] {
+    background: lightgray;
+    font-size: 10px;
+    font-weight: bolder;
+    color: white;
+    width: 80px;
+    border: none;
+    padding: 5px 7px 5px 7px;
+    text-decoration: none;
+    margin-right: 905px;
+    cursor: pointer;
 }
