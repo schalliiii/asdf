@@ -1,0 +1,81 @@
+body{
+    background-image: url(bg.png);
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-bottom: auto;
+    margin-top: 150px;
+}
+
+#headline{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    color: white;
+    font-weight: bold;
+    font-size: 23px;
+    margin-left: -150px;
+    margin-top: -210px;
+}
+
+.Formular{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: -299px;
+    text-align: center;
+    color: white;
+}
+
+form{
+    color: white;
+    display: inline-block;
+    position: absolute;
+    margin-left: -250px;
+    margin-right: auto;
+    text-align: left;
+}
+
+#greetings{
+    padding: 0px 200px 70px 0px;
+}
+
+#user{
+    padding: 3px 30px 0px 0px;
+}
+
+#textfeld{
+    width: 100px;
+}
+
+.button{
+    color:green;
+    background-color:white;
+    padding: 2px 5px 2px 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    width: 63px;
+    cursor: pointer;
+    border-radius: 0px;
+    display: block;
+    margin-top: 10px;
+}
+
+.button:hover{
+    opacity: 0.5;
+}
