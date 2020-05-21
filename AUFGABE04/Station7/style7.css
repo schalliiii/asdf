@@ -1,0 +1,28 @@
+body{
+    background-image: url(bg.png);
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-bottom: auto;
+    margin-top: 380px;
+}
+
+img[alt=band]{
+    display: inline-block;
+    position: absolute;
+    margin-left: -200px;
+    margin-top: 225px;
+}
+
+.video{
+    display: inline-block;
+    position: absolute;
+}
