@@ -1,4 +1,30 @@
 body{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-image: url(plants.png)
+}
+
+.button{
+    color: white;
+    background-color: #99bfb3;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    width: 150px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 10px;
+}
+
+.button:hover{
+    opacity: 0.5;
+}
+
+h1{
+    margin-top:50px;
+    color: white;
 }
