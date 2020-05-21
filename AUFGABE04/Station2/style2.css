@@ -1,0 +1,67 @@
+body{
+    background-image: url(bg.png);
+}
+
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-bottom: auto;
+    margin-top: 150px;
+}
+
+#headline{
+    display: inline-block;
+    position: absolute;
+    font-size: 15px;
+    font-weight: bolder;
+    text-align: left;
+    margin-top: -80px;
+    margin-left: 80px;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+img[alt=Muschel1]{
+    display: inline-block;
+    position: absolute;
+    margin-left: -540px;
+    margin-top: 70px;
+    transform: translate(-50%, -50%);
+}
+
+img[alt=Muschel2]{
+    display: inline-block;
+    position: absolute;
+    margin-left: -400px;
+    margin-top: -50px;
+    transform: translate(-50%, -50%);
+}
+
+img[alt=Muschel3]{
+    display: inline-block;
+    position: absolute;
+    margin-left: -270px;
+    margin-top: 40px;
+    transform: translate(-50%, -50%);
+}
+
+.Muscheln:hover{
+    opacity: 0;
+}
+
+.Muscheln2{
+    opacity: 0;
+}
+
+.Muscheln2:hover{
+    opacity: 0;
+}
+
+
