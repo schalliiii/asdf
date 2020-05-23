@@ -18,15 +18,13 @@ body{
 #headline{
     display: inline-block;
     position: absolute;
-    top: 425px;
-    left: 1280px;
     transform: translate(-50%, -50%);
     width: 40%;
     color: white;
     font-weight: bold;
     font-size: 23px;
     margin-left: -150px;
-    margin-top: -210px;
+    margin-top: -330px;
 }
 
 .Formular{
