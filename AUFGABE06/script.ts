@@ -22,7 +22,7 @@ function AfricaFunction () {
     document.getElementById("titleRegion").innerHTML = "Africa";
     document.getElementById("Emissionswert2").innerHTML = "4.26%";
     document.getElementById("Emissionswert3").innerHTML = "0.2%";
-    document.getElementById("Emissionswert4").innerHTML = "207.5";
+    document.getElementById("Emissionswert4").innerHTML = "+207.5";
     document.getElementById("Text1").innerHTML = "Africa";
     document.querySelector(".chartWrapper .chart").setAttribute("style", "height: 4.26%");
 }
@@ -42,7 +42,7 @@ function SouthAmericaFunction () {
     document.getElementById("titleRegion").innerHTML = "South America";
     document.getElementById("Emissionswert2").innerHTML = "4.35%";
     document.getElementById("Emissionswert3").innerHTML = "0.11%";
-    document.getElementById("Emissionswert4").innerHTML = "128.9";
+    document.getElementById("Emissionswert4").innerHTML = "+128.9";
     document.getElementById("Text1").innerHTML = "South America";
     document.querySelector(".chartWrapper .chart").setAttribute("style", "height: 4.35%");
 }
@@ -52,7 +52,7 @@ function AsiaFunction () {
     document.getElementById("titleRegion").innerHTML = "Asia";
     document.getElementById("Emissionswert2").innerHTML = "50.09%";
     document.getElementById("Emissionswert3").innerHTML = "0.26%";
-    document.getElementById("Emissionswert4").innerHTML = "3319.4";
+    document.getElementById("Emissionswert4").innerHTML = "+3319.4";
     document.getElementById("Text1").innerHTML = "Asia";
     document.querySelector(".chartWrapper .chart").setAttribute("style", "height: 50.09%");
 }
@@ -62,7 +62,7 @@ function AustraliaFunction () {
     document.getElementById("titleRegion").innerHTML = "Australia";
     document.getElementById("Emissionswert2").innerHTML = "6.75%";
     document.getElementById("Emissionswert3").innerHTML = "5.39%";
-    document.getElementById("Emissionswert4").innerHTML = "107.5";
+    document.getElementById("Emissionswert4").innerHTML = "+107.5";
     document.getElementById("Text1").innerHTML = "Australia";
     document.querySelector(".chartWrapper .chart").setAttribute("style", "height: 6.75%");
 }
