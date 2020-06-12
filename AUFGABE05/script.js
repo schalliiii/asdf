@@ -1,4 +1,3 @@
-"use strict";
 var welt = 29016;
 var europa2018 = 4209.3;
 var europa2 = europa2018 * 100 / welt;

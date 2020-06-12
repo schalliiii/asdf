@@ -1,4 +1,3 @@
-"use strict";
 window.addEventListener('load', function () {
     document.querySelector(".europe").addEventListener('click', EuropeFunction);
     document.querySelector(".africa").addEventListener('click', AfricaFunction);
