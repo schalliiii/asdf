@@ -25,19 +25,18 @@ window.addEventListener('load', function() {
         allSounds2 ("snare.mp3")});
 }
 
-
-function Final (Play) { 
-	setInterval(function() {
-	var anzahl = Play.length;
-	let i;
-	for ( i=0; i<anzahl; i++ ) {
-		var Sample = new Audio(Lied[i]);
-		Sample.play();
-	}
-	}, 2000); 
+var finalbeat : string [] = ["kick.mp3", "snare.mp3", "hihat.mp3"];
+var a : number = 1			
+function playbutton (play) {
+	var ksh : HTMLAudioElement = new Audio(finalbeat[play]
+	ksh.playbutton();
 } 
-
-var PlayButton = ["kick.mp3", "snare.mp3", "hihat.mp3"];
+	
 document.querySelector("#playbutton").addEventListener("click", function() {
-    Final(PlayButton);});
+	setInterval(function() {
+	playbutton(a - 1);
+	a = a;
+	a = a +1;
+	}, 400);
+});
 
