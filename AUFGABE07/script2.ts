@@ -25,7 +25,7 @@ window.addEventListener('load', function() {
     document.querySelector("#button9").addEventListener("click", function(){
         allSounds2 ("snare.mp3")});
 
-  var finalbeat : string [] = ["kick.mp3", "snare.mp3", "hihat.mp3"];
+ var finalbeat : string [] = ["kick.mp3", "snare.mp3", "hihat.mp3"];
  var ksh : number = 1;
  function playbutton(play) {
     var kicksnarehihat : HTMLAudioElement = new Audio(finalbeat[play]);
