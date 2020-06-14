@@ -31,18 +31,20 @@ window.addEventListener('load', function () {
     document.querySelector("#button9").addEventListener("click", function () {
         allSounds2("snare.mp3");
     });
-    var finalbeat = ["kick.mp3", "snare.mp3", "hihat.mp3"];
-    var ksh = 1;
-    function playbutton(play) {
-        var kicksnarehihat = new Audio(finalbeat[play]);
-        kicksnarehihat.playbutton();
-    }
+});
+var finalbeat = ["kick.mp3", "snare.mp3", "hihat.mp3"];
+var x = 1;
+function play(done) {
+    var kicksnarehihat = new Audio(finalbeat[done]);
+    kicksnarehihat.play();
+}
+window.addEventListener('load', function () {
     document.querySelector("#playbutton").addEventListener("click", function () {
         setInterval(function () {
-            playbutton(ksh - 1);
-            ksh = ksh;
-            ksh = ksh + 1;
-        }, 400);
+            play(x - 1);
+            x = x;
+            x = x + 1;
+        }, 500);
     });
 });
 //# sourceMappingURL=script2.js.map

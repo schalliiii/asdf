@@ -24,20 +24,23 @@ window.addEventListener('load', function() {
         allSounds2 ("laugh-2.mp3")});
     document.querySelector("#button9").addEventListener("click", function(){
         allSounds2 ("snare.mp3")});
-
- var finalbeat : string [] = ["kick.mp3", "snare.mp3", "hihat.mp3"];
- var ksh : number = 1;
- function playbutton(play) {
-    var kicksnarehihat : HTMLAudioElement = new Audio(finalbeat[play]);
-    kicksnarehihat.playbutton();
- }
-
- document.querySelector("#playbutton").addEventListener("click", function() {
-     setInterval(function () {
-        playbutton(ksh - 1);
-        ksh = ksh;
-        ksh = ksh + 1;
-        }, 400);
-    });
-
 })
+
+
+var finalbeat : string [] = ["kick.mp3", "snare.mp3", "hihat.mp3"];
+var x : number = 1;
+
+function play(done) {
+    var kicksnarehihat : HTMLAudioElement = new Audio(finalbeat[done]);
+    kicksnarehihat.play();
+}
+
+window.addEventListener('load', function () {
+document.querySelector("#playbutton").addEventListener("click", function () {
+    setInterval(function () {
+        play(x - 1);
+        x = x;
+        x = x + 1;
+    }, 500);
+});
+});
