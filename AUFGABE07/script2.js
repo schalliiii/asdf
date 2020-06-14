@@ -34,14 +34,14 @@ window.addEventListener('load', function () {
 });
 var finalbeat = ["kick.mp3", "snare.mp3", "hihat.mp3"];
 var x = 1;
-function play(done) {
+function finalbutton(done) {
     var kicksnarehihat = new Audio(finalbeat[done]);
     kicksnarehihat.play();
 }
 window.addEventListener('load', function () {
     document.querySelector("#playbutton").addEventListener("click", function () {
         setInterval(function () {
-            play(x - 1);
+            finalbutton(x - 1);
             x = x;
             x = x + 1;
         }, 500);
