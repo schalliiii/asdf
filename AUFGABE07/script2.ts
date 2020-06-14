@@ -1,3 +1,4 @@
+// Erklärungshilfe von Jasmin
 
 function allSounds2 (mp3:string) {
     var allSounds:HTMLAudioElement = new Audio (mp3);
@@ -23,21 +24,20 @@ window.addEventListener('load', function() {
         allSounds2 ("laugh-2.mp3")});
     document.querySelector("#button9").addEventListener("click", function(){
         allSounds2 ("snare.mp3")});
-}
 
+  var finalbeat : string [] = ["kick.mp3", "snare.mp3", "hihat.mp3"];
+ var ksh : number = 1;
+ function playbutton(play) {
+    var kicksnarehihat : HTMLAudioElement = new Audio(finalbeat[play]);
+    kicksnarehihat.playbutton();
+ }
 
-function Final (Play) { 
-	setInterval(function() {
-	var anzahl = Play.length;
-	let i;
-	for ( i=0; i<anzahl; i++ ) {
-		var Sample = new Audio(Lied[i]);
-		Sample.play();
-	}
-	}, 2000); 
-} 
+ document.querySelector("#playbutton").addEventListener("click", function() {
+     setInterval(function () {
+        playbutton(ksh - 1);
+        ksh = ksh;
+        ksh = ksh + 1;
+        }, 400);
+    });
 
-var PlayButton = ["kick.mp3", "snare.mp3", "hihat.mp3"];
-document.querySelector("#playbutton").addEventListener("click", function() {
-    Final(PlayButton);});
-
+})

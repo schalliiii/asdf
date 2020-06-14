@@ -1,3 +1,4 @@
+// Erklärungshilfe von Jasmin
 function allSounds2(mp3) {
     var allSounds = new Audio(mp3);
     allSounds.play();
@@ -30,18 +31,18 @@ window.addEventListener('load', function () {
     document.querySelector("#button9").addEventListener("click", function () {
         allSounds2("snare.mp3");
     });
-}, function Final(Play) {
-    setInterval(function () {
-        var anzahl = Play.length;
-        let i;
-        for (i = 0; i < anzahl; i++) {
-            var Sample = new Audio(Lied[i]);
-            Sample.play();
-        }
-    }, 2000);
-});
-var PlayButton = ["kick.mp3", "snare.mp3", "hihat.mp3"];
-document.querySelector("#playbutton").addEventListener("click", function () {
-    Final(PlayButton);
+    var finalbeat = ["kick.mp3", "snare.mp3", "hihat.mp3"];
+    var ksh = 1;
+    function playbutton(play) {
+        var kicksnarehihat = new Audio(finalbeat[play]);
+        kicksnarehihat.playbutton();
+    }
+    document.querySelector("#playbutton").addEventListener("click", function () {
+        setInterval(function () {
+            playbutton(ksh - 1);
+            ksh = ksh;
+            ksh = ksh + 1;
+        }, 400);
+    });
 });
 //# sourceMappingURL=script2.js.map
