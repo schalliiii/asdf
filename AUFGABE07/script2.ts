@@ -24,19 +24,3 @@ window.addEventListener('load', function() {
     document.querySelector("#button9").addEventListener("click", function(){
         allSounds2 ("snare.mp3")});
 }
-
-var finalbeat : string [] = ["kick.mp3", "snare.mp3", "hihat.mp3"];
-var a : number = 1			
-function playbutton (play) {
-	var ksh : HTMLAudioElement = new Audio(finalbeat[play]
-	ksh.playbutton();
-} 
-	
-document.querySelector("#playbutton").addEventListener("click", function() {
-	setInterval(function() {
-	playbutton(a - 1);
-	a = a;
-	a = a +1;
-	}, 400);
-});
-
