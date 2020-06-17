@@ -1,0 +1,24 @@
+
+body{
+    background-color: black;
+}
+
+button{
+    background-color: #c33bf5;
+    text-align: center;
+    padding: 100px 100px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d0f53b;
+}
+
+
+body {
+    text-align: center;
+}
+
+#playbutton:hover {
+    background-color: #d0f53b;
+}
