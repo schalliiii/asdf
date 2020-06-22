@@ -37,7 +37,7 @@ window.addEventListener('load', function () {
 
 
 
-    // playbutton + recordbutton 
+    // Aufgabe 8 - playbutton + recordbutton 
 
     document.querySelector("#playbutton").addEventListener('click', playstop);
     document.querySelector("#recordbutton").addEventListener('click', recording);

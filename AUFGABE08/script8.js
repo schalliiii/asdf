@@ -28,7 +28,7 @@ window.addEventListener('load', function () {
     document.querySelector("#button9").addEventListener('click', function () {
         playSample("snare.mp3");
     });
-    // playbutton + recordbutton 
+    // Aufgabe 8 - playbutton + recordbutton 
     document.querySelector("#playbutton").addEventListener('click', playstop);
     document.querySelector("#recordbutton").addEventListener('click', recording);
     // intervall - finalbeat loop
