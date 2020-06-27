@@ -23,7 +23,6 @@ window.addEventListener("load", function () {
         total.innerHTML = todoListe.length;
     }
 
-    var trash = document.querySelector(".fa-trash-alt");
     var Liste2 = document.querySelector(".addlist");
     drawList();
 

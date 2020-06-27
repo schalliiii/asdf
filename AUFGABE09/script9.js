@@ -13,7 +13,6 @@ window.addEventListener("load", function () {
         var total = document.querySelector("#mySpan");
         total.innerHTML = todoListe.length;
     }
-    var trash = document.querySelector(".fa-trash-alt");
     var Liste2 = document.querySelector(".addlist");
     drawList();
     // Klick auf add-button1 pusht neues Element hinzu
