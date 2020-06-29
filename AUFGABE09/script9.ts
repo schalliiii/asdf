@@ -2,7 +2,7 @@
 
 // Array erstellen
 
-let todoListe = ["Medienanalyse Präsentation ", "EIA Hausaufgaben ", "Medienpsychologie ", "Medientechnik Präsentation"];
+let todoListe = ["Medienanalyse Präsentation ", "EIA Hausaufgaben ", "Medienpsychologie ", "Medientechnik Präsentation "];
 
 // 
 
@@ -14,13 +14,26 @@ window.addEventListener("load", function () {
     function drawList() {
         Liste2.innerHTML = "";
         for (var index = 0; index < todoListe.length; index++) {
-            Liste2.innerHTML += "<div>" + "<input type='checkbox'>" + todoListe[index] + "<i class='fas fa-trash-alt'id=delete></i>" + "</div>";
+            Liste2.innerHTML +="<div id='box'>" + "<input type='checkbox' id='checkbox'>" + todoListe[index] + "<i class='fas fa-trash-alt'id=delete></i>" + "</div>";
         }
     
         // "in total" Anzeige passt sich an
     
         var total = document.querySelector("#mySpan");
         total.innerHTML = todoListe.length;
+
+        // Lösch Funktion
+
+        var close = document.getElementsByClassName("fas fa-trash-alt");
+        var i;
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function () {
+                var div = this.parentElement;
+                div.style.display = "none";
+                count--;
+                document.getElementById("#mySpan").innerHTML = String(count);
+            };
+        }
     }
 
     var Liste2 = document.querySelector(".addlist");
