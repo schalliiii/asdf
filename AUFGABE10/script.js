@@ -1,4 +1,4 @@
-/** Mit Hilfe von Markus Damm im Praktikum Freitags
+/** Mit Hilfe von Sade Babatunde
  *
  * Die ToDos werden in dem Array todosText gespeichert
  * Jedes ToDo hat aber, neben dem ToDo-Text, einen zweiten
