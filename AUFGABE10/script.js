@@ -16,13 +16,13 @@ var todosText = ["Lorem", "Ipsum", "Dolor"];
 var todosChecked = [true, false, false];
 var todos = [
     {
-        text: "Lorem", ListChecked: true
+        text: "Medienanalyse Präsentation", ListChecked: true
     },
     {
-        text: "Ipsum", ListChecked: false
+        text: "Medientechnik Hausarbeit", ListChecked: false
     },
     {
-        text: "Dolor", ListChecked: false
+        text: "Audiotechnik Lektion 13", ListChecked: false
     }
 ];
 /**
