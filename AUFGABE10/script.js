@@ -1,4 +1,5 @@
-/**
+/** Mit Hilfe von Markus Damm im Praktikum Freitags
+ *
  * Die ToDos werden in dem Array todosText gespeichert
  * Jedes ToDo hat aber, neben dem ToDo-Text, einen zweiten
  * Wert, nämlich ob es erledigt ist oder nicht
@@ -15,13 +16,13 @@ var todosText = ["Lorem", "Ipsum", "Dolor"];
 var todosChecked = [true, false, false];
 var todos = [
     {
-        text: "Lorem", isChecked: true
+        text: "Lorem", ListChecked: true
     },
     {
-        text: "Ipsum", isChecked: false
+        text: "Ipsum", ListChecked: false
     },
     {
-        text: "Dolor", isChecked: false
+        text: "Dolor", ListChecked: false
     }
 ];
 /**
@@ -67,14 +68,14 @@ window.addEventListener("load", function () {
 function drawListToDOM() {
     // alle todos erst einmal aus dem DOM löschen
     todosDOMElement.innerHTML = "";
-    // das ToDo-Array durchlaufen (iterieren) und Todo für Todo in den DOM schreiben
     for (let index = 0; index < todos.length; index++) {
+        let todo = document.createElement("div");
+        todo.classList.add("todo");
+        // var _loop_1 = function (index) {
         /**
          * Neues DIV-Element erstellen (würde auch mit innerHTML = "<div class='todo'></div>" gehen,
          * die Objekt-Instansierung ist aber übersichtlicher)
          */
-        let todo = document.createElement("div");
-        todo.classList.add("todo");
         /**
          * Jedes Todo besteht aus etwas Markup, also aus HTML-Elementen
          * wie der Check-Anzeige, dem ToDo-Text und dem Mülleimer
@@ -85,8 +86,8 @@ function drawListToDOM() {
          * ein Wert einer Variablen benötigt (bspw. für die CSS Klasse oder für den ToDo-Text),
          * hier muss die Zeichenkette unterbrochen werden.
          */
-        todo.innerHTML = "<span class='check " + todos[index].isChecked + "'><i class='fas fa-check'></i></span>"
-            + todos[index] +
+        todo.innerHTML = "<span class='check " + todos[index].ListChecked + "'><i class='fas fa-check'></i></span>"
+            + todos[index].text +
             "<span class='trash fas fa-trash-alt'></span>";
         // Zuweisen der Event-Listener für den Check- und den Trash-Button
         todo.querySelector(".check").addEventListener("click", function () {
@@ -102,21 +103,26 @@ function drawListToDOM() {
         // Bis hier hin wurde das neue Todo "zusammengebaut", jetzt wird es in den DOM gerendert.
         todosDOMElement.appendChild(todo);
     }
+    // das ToDo-Array durchlaufen (iterieren) und Todo für Todo in den DOM schreiben
+    // for (var index = 0; index < todosText.length; index++) {
+    // _loop_1(index);
+    // }
     updateCounter();
 }
 function updateCounter() {
-    counterTotalDOMElement.innerHTML = todosText.length + " in total";
+    counterTotalDOMElement.innerHTML = todos.length + "in total";
     let counterChecked = 0;
     let counterOpen = 0;
     for (let i = 0; i < todos.length; i++) {
-        console.log(todos[i].isChecked);
-        if (todos[i].isChecked == true) {
+        console.log(todos[i].ListChecked);
+        if (todos[i].ListChecked == true) {
             counterChecked++;
         }
         else {
             counterOpen++;
         }
     }
+    // counterDoneDOMElement.innerHTML = todos.length + "in done";
     counterDoneDOMElement.innerHTML = counterChecked + "in done";
     counterDoneDOMElement.innerHTML = counterOpen + "in open";
 }
@@ -137,8 +143,9 @@ function addTodo() {
          * Status der ToDos abbildet, für dieses ToDo (weil selbe Stelle im Array)
          * der Status "unchecked", hier false, gepusht.
          */
-        todos.unshift({ text: inputDOMElement.value, isChecked: false });
-        todosChecked.push(false);
+        //  todosText.push(inputDOMElement.value);
+        // todosChecked.push(false);
+        todos.unshift({ text: inputDOMElement.value, ListChecked: false });
         // Jetzt wird der Text aus dem Eingabefeld gelöscht
         inputDOMElement.value = "";
         /**
@@ -165,7 +172,8 @@ function toggleCheckState(index) {
      * Alternativ könnte man hier natürlich auch andere Schreibweisen (wie sie im
      * Kurs behandelt wurden) nutzen.
      */
-    todos[index].isChecked = !todos[index].isChecked;
+    // todosChecked[index] = !todosChecked[index];
+    todos[index].ListChecked = !todos[index].ListChecked;
     /**
      * Die zentrale Funktion, um die Liste des ToDo-Arrays in den DOM zu rendern
      * wird wieder getriggert
