@@ -121,9 +121,9 @@ function updateCounter() {
             counterOpen++;
         }
     }
-    // counterDoneDOMElement.innerHTML = todos.length + "in done";
-    counterDoneDOMElement.innerHTML = counterChecked + "in done";
-    counterDoneDOMElement.innerHTML = counterOpen + "in open";
+    counterDoneDOMElement.innerHTML = todos.length + "need to be done";
+    counterDoneDOMElement.innerHTML = counterChecked + "in total";
+    counterDoneDOMElement.innerHTML = counterOpen + "done";
 }
 /**
 * Ein neues ToDo wird folgendermaßen erstellt:

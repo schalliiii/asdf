@@ -128,7 +128,7 @@ function updateCounter(): void {
    let counterChecked: number = 0;
    let counterOpen: number = 0;
 
-   for (let i: number = 0; i <  todos.length; i++) {
+   for (let i: number = 0; i < todos.length; i++) {
        console.log(todos[i].ListChecked);
        if (todos[i].ListChecked == true) {
            counterChecked++;
@@ -139,9 +139,10 @@ function updateCounter(): void {
 
 
    }
-   // counterDoneDOMElement.innerHTML = todos.length + "in done";
-   counterDoneDOMElement.innerHTML = counterChecked + "in done";
-   counterDoneDOMElement.innerHTML = counterOpen + "in open";
+
+   counterDoneDOMElement.innerHTML = todos.length + "need to be done";
+   counterDoneDOMElement.innerHTML = counterChecked + "in total";
+   counterDoneDOMElement.innerHTML = counterOpen + "done";
 }
 /**
 * Ein neues ToDo wird folgendermaßen erstellt:
