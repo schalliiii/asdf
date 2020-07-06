@@ -1,17 +1,16 @@
-/** Mit Hilfe von Sade Babatunde
- *
- * Die ToDos werden in dem Array todosText gespeichert
- * Jedes ToDo hat aber, neben dem ToDo-Text, einen zweiten
- * Wert, nämlich ob es erledigt ist oder nicht
- * (checked / unchecked). Der Einsatz von einem eindimensionalen
- * Array ermöglicht aber nur, dass wir ein Wert nach dem anderen auflisten.
- * Den zweiten Wert zu einem ToDo speichern wir also in einem
- * zweiten Array. Beide Arrays beinhalten also Infos zu einem ToDo,
- * den ToDo-Text und den Erledigtstatus eines ToDos. Die entsprechende
- * Stelle eines ToDos zeigt jetzt in den Arrays auf die entsprechenden
- * Werte, bspw. Stelle 0 im Array todosText und Stelle 0 im Array
- * todosChecked gehören zusammen zu einem ToDo.
- */
+/** Hilfe von Sade Babatunde
+* Die ToDos werden in dem Array todosText gespeichert
+* Jedes ToDo hat aber, neben dem ToDo-Text, einen zweiten
+* Wert, nämlich ob es erledigt ist oder nicht
+* (checked / unchecked). Der Einsatz von einem eindimensionalen
+* Array ermöglicht aber nur, dass wir ein Wert nach dem anderen auflisten.
+* Den zweiten Wert zu einem ToDo speichern wir also in einem
+* zweiten Array. Beide Arrays beinhalten also Infos zu einem ToDo,
+* den ToDo-Text und den Erledigtstatus eines ToDos. Die entsprechende
+* Stelle eines ToDos zeigt jetzt in den Arrays auf die entsprechenden
+* Werte, bspw. Stelle 0 im Array todosText und Stelle 0 im Array
+* todosChecked gehören zusammen zu einem ToDo.
+*/
 var todosText = ["Lorem", "Ipsum", "Dolor"];
 var todosChecked = [true, false, false];
 var todos = [
@@ -26,12 +25,12 @@ var todos = [
     }
 ];
 /**
- * Die Anwendung wird immer wieder auf die selben
- * DOM-Elemente zugreifen müssen. Damit diese Elemente nicht
- * jedes mal neu selektiert werden müssen, werden hier
- * Variablen deklariert, die später die entsprechenden DOM-Elemente
- * speichern.
- */
+* Die Anwendung wird immer wieder auf die selben
+* DOM-Elemente zugreifen müssen. Damit diese Elemente nicht
+* jedes mal neu selektiert werden müssen, werden hier
+* Variablen deklariert, die später die entsprechenden DOM-Elemente
+* speichern.
+*/
 var inputDOMElement;
 var addButtonDOMElement;
 var todosDOMElement;
@@ -39,9 +38,9 @@ var counterTotalDOMElement;
 var counterDoneDOMElement;
 var counterOpenDOMElement;
 /**
- * Sobald der DOM geladen wurde können grundlegende DOM-Interaktionen
- * initialisiert werden
- */
+* Sobald der DOM geladen wurde können grundlegende DOM-Interaktionen
+* initialisiert werden
+*/
 window.addEventListener("load", function () {
     /**
      * Jetzt da der DOM verfügbar ist können die wichtigsten Elemente
@@ -127,8 +126,8 @@ function updateCounter() {
     counterDoneDOMElement.innerHTML = counterOpen + "in open";
 }
 /**
- * Ein neues ToDo wird folgendermaßen erstellt:
- */
+* Ein neues ToDo wird folgendermaßen erstellt:
+*/
 function addTodo() {
     /**
      * Zunächst wird geprüft, ob das Input-Feld nicht leer ist
@@ -156,8 +155,8 @@ function addTodo() {
     }
 }
 /**
- * Der check- / unchecked Zustand eines ToDo wird wie folgt gesetzt:
- */
+* Der check- / unchecked Zustand eines ToDo wird wie folgt gesetzt:
+*/
 function toggleCheckState(index) {
     /**
      * Das Array, , das den Checked- / Uncheck-Status der ToDos abbildet,
@@ -181,8 +180,8 @@ function toggleCheckState(index) {
     drawListToDOM();
 }
 /**
- * Diese Funktion löscht ein ToDo
- */
+* Diese Funktion löscht ein ToDo
+*/
 function deleteTodo(index) {
     /**
      * Durch "index" ist die entsprechende Stelle im Array
