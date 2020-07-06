@@ -1,4 +1,4 @@
-/** Hilfe von Sade Babatunde
+/** Hilf von Sade Babatunde
 * Die ToDos werden in dem Array todosText gespeichert
 * Jedes ToDo hat aber, neben dem ToDo-Text, einen zweiten
 * Wert, nämlich ob es erledigt ist oder nicht
@@ -109,7 +109,7 @@ function drawListToDOM() {
     updateCounter();
 }
 function updateCounter() {
-    counterTotalDOMElement.innerHTML = todos.length + "in total";
+    counterTotalDOMElement.innerHTML = todos.length + " in total";
     let counterChecked = 0;
     let counterOpen = 0;
     for (let i = 0; i < todos.length; i++) {
@@ -121,9 +121,9 @@ function updateCounter() {
             counterOpen++;
         }
     }
-    counterDoneDOMElement.innerHTML = todos.length + "need to be done";
-    counterDoneDOMElement.innerHTML = counterChecked + "in total";
-    counterDoneDOMElement.innerHTML = counterOpen + "done";
+    // counterDoneDOMElement.innerHTML = todos.length + " in done";
+    counterDoneDOMElement.innerHTML = counterChecked + " in done";
+    counterDoneDOMElement.innerHTML = counterOpen + " in open";
 }
 /**
 * Ein neues ToDo wird folgendermaßen erstellt:
