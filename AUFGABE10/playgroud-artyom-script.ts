@@ -1,3 +1,4 @@
+namespace aufgabe10 {
 declare var Artyom: any;
 
 window.addEventListener("load", function(): void {
@@ -8,6 +9,12 @@ window.addEventListener("load", function(): void {
         smart: true,
         action: function(i: any, wildcard: string): void {
             console.log("Neue Aufgabe wird erstellt: " + wildcard);
+
+            todos.unshift({
+                text: wildcard,
+                ListChecked: false
+            });
+            drawListToDOM();
         }
     });
     
@@ -32,3 +39,5 @@ window.addEventListener("load", function(): void {
     startContinuousArtyom();
     
 });
+
+}

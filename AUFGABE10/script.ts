@@ -1,3 +1,4 @@
+namespace aufgabe10 {
 /** Hilf von Sade Babatunde
 * Die ToDos werden in dem Array todosText gespeichert
 * Jedes ToDo hat aber, neben dem ToDo-Text, einen zweiten
@@ -18,7 +19,7 @@ interface TodoApp {
    text: string;
    ListChecked: boolean;
 }
-var todos: TodoApp[] = [
+export var todos: TodoApp[] = [
    {
        text: "Medienanalyse Präsentation", ListChecked: true
    },
@@ -70,7 +71,7 @@ window.addEventListener("load", function (): void {
     */
    drawListToDOM();
 });
-function drawListToDOM(): void {
+export function drawListToDOM(): void {
    // alle todos erst einmal aus dem DOM löschen
    todosDOMElement.innerHTML = "";
 
@@ -141,7 +142,7 @@ function updateCounter(): void {
    }
    // counterDoneDOMElement.innerHTML = todos.length + " in done";
    counterDoneDOMElement.innerHTML = counterChecked + " in done";
-   counterDoneDOMElement.innerHTML = counterOpen + " in open";
+   counterOpenDOMElement.innerHTML = counterOpen + " in open";
 }
 /**
 * Ein neues ToDo wird folgendermaßen erstellt:
