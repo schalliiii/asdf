@@ -21,10 +21,10 @@ const duck: HTMLElement = document.querySelector("#duckbutton");
 const boing: HTMLElement = document.querySelector("#boingbutton"); 
 const applause: HTMLElement = document.querySelector("#applausebutton"); 
 const startButton: HTMLElement = document.querySelector("#start"); 
-const levelOne: HTMLElement = document.querySelector("#levelone"); 
-const levelTwo: HTMLElement = document.querySelector("#leveltwo"); 
-const levelThree: HTMLElement = document.querySelector("#levelthree"); 
-const levelFour: HTMLElement = document.querySelector("#levelfour"); 
+let levelOne: HTMLElement = document.querySelector("#levelone"); 
+let levelTwo: HTMLElement = document.querySelector("#leveltwo"); 
+let levelThree: HTMLElement = document.querySelector("#levelthree"); 
+let levelFour: HTMLElement = document.querySelector("#levelfour"); 
 const soundButtons: Array<HTMLElement> = [boo, laugh, duck, boing, applause]; // eine Konstante für alle Töne (später für removeClass Funktion)
 
 function addLevelListeners(one: HTMLElement, two: HTMLElement, three: HTMLElement, four: HTMLElement){
@@ -53,14 +53,13 @@ startButton.addEventListener('click', function() { // Wenn Spieler den Startbutt
     return;
   }
   if (on || win) { // Wenn on variable = true oder der Spieler gewonnen hat --- ansonsten passiert nichts beim Klicken auf den Startbutton
-    if(startPressed == 0){ // prüft, ob der Startbutton schon einmal benutzt wurde, ansonsten würde die Konsole einen Fehler anzeigen, da die Buttons schon weg sind
+ // prüft, ob der Startbutton schon einmal benutzt wurde, ansonsten würde die Konsole einen Fehler anzeigen, da die Buttons schon weg sind
     removeElement("#levelone"); // klickt Spieler den Startbutton werden Level Button nicht mehr angezeigt
     removeElement("#leveltwo"); 
     removeElement("#levelthree"); 
     removeElement("#levelfour"); 
     removeElement("#Schwierigkeitsgrad");
-    }
-    startPressed++;
+
     play();
   }
 });
@@ -210,7 +209,7 @@ function check() { // prüft, ob der Spieler die korrekten Töne geklickt hat un
     winGame(); //wingame methode aufrufen --> Spiel wurde gewonnen!
     
   }
-
+if(playing){
   if (good == false) { // falls Spieler nicht alles richtig wiederholt hat
     turnCounter.innerHTML = "NO!"; //in turncounter Variable wird "NO"! angezeigt
     playSample(6); // lose.mp3 wird abgespielt, wenn Spieler verloren hat
@@ -220,7 +219,9 @@ function check() { // prüft, ob der Spieler die korrekten Töne geklickt hat un
 
     noise = false; // kein Ton soll gespielt werden, wenn Spieler etwas Falsches klickt
     addElement();
+    playing = false;
   }
+}
 
   if (turn == playerOrder.length && good && !win) { // prüft, ob turn Variable der Länge des playerOrder Arrays entspricht und ob Spieler alles richtig geclickt und noch nicht gewonnen hat, falls ja:
     turn++; // turn Variable um eins erhöhen --> Zug ist vorbei
@@ -289,6 +290,8 @@ function addElement() {
   var two = document.createElement("img") as HTMLImageElement;
   var three = document.createElement("img") as HTMLImageElement;
   var four = document.createElement("img") as HTMLImageElement;
+  var node = document.createElement("p") as HTMLParagraphElement;
+  node.id ="Schwierigkeitsgrad";
   one.id ="levelone";
   two.id = "leveltwo";
   three.id = "levelthree";
@@ -301,10 +304,15 @@ function addElement() {
   two.src="2.png";
   three.src="3.png";
   four.src="4.png";
+  levelOne = one;
+  levelTwo = two;
+  levelThree = three;
+  levelFour = four;
   document.querySelector("#levelbuttons").appendChild(one);
   document.querySelector("#levelbuttons").appendChild(two);
   document.querySelector("#levelbuttons").appendChild(three);
   document.querySelector("#levelbuttons").appendChild(four);
+  document.querySelector("#levelbuttons").appendChild(node);
   addLevelListeners(one, two, three, four);
 
 }

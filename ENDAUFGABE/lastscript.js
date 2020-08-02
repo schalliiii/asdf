@@ -19,10 +19,10 @@ const duck = document.querySelector("#duckbutton");
 const boing = document.querySelector("#boingbutton");
 const applause = document.querySelector("#applausebutton");
 const startButton = document.querySelector("#start");
-const levelOne = document.querySelector("#levelone");
-const levelTwo = document.querySelector("#leveltwo");
-const levelThree = document.querySelector("#levelthree");
-const levelFour = document.querySelector("#levelfour");
+let levelOne = document.querySelector("#levelone");
+let levelTwo = document.querySelector("#leveltwo");
+let levelThree = document.querySelector("#levelthree");
+let levelFour = document.querySelector("#levelfour");
 const soundButtons = [boo, laugh, duck, boing, applause]; // eine Konstante für alle Töne (später für removeClass Funktion)
 function addLevelListeners(one, two, three, four) {
     one.addEventListener('click', function () {
@@ -45,14 +45,13 @@ startButton.addEventListener('click', function () {
         return;
     }
     if (on || win) { // Wenn on variable = true oder der Spieler gewonnen hat --- ansonsten passiert nichts beim Klicken auf den Startbutton
-        if (startPressed == 0) { // prüft, ob der Startbutton schon einmal benutzt wurde, ansonsten würde die Konsole einen Fehler anzeigen, da die Buttons schon weg sind
+// prüft, ob der Startbutton schon einmal benutzt wurde, ansonsten würde die Konsole einen Fehler anzeigen, da die Buttons schon weg sind
             removeElement("#levelone"); // klickt Spieler den Startbutton werden Level Button nicht mehr angezeigt
             removeElement("#leveltwo");
             removeElement("#levelthree");
             removeElement("#levelfour");
             removeElement("#Schwierigkeitsgrad");
-        }
-        startPressed++;
+
         play();
     }
 });
@@ -189,6 +188,7 @@ function check() {
     if (playerOrder.length == level && good) { // prüft, ob das die letzte Runde war (Länge des arrays = Länge level Variable) // &&: ob der Spieler alles richtig gemacht, hat falls ja:
         winGame(); //wingame methode aufrufen --> Spiel wurde gewonnen!
     }
+    if(playing){
     if (good == false) { // falls Spieler nicht alles richtig wiederholt hat
         turnCounter.innerHTML = "NO!"; //in turncounter Variable wird "NO"! angezeigt
         playSample(6); // lose.mp3 wird abgespielt, wenn Spieler verloren hat
@@ -196,6 +196,7 @@ function check() {
         clearInterval(intervalId);
         noise = false; // kein Ton soll gespielt werden, wenn Spieler etwas Falsches klickt
         addElement();
+        playing = false;
     }
     if (turn == playerOrder.length && good && !win) { // prüft, ob turn Variable der Länge des playerOrder Arrays entspricht und ob Spieler alles richtig geclickt und noch nicht gewonnen hat, falls ja:
         turn++; // turn Variable um eins erhöhen --> Zug ist vorbei
@@ -205,6 +206,7 @@ function check() {
         turnCounter.innerHTML = "" + turn; // turnCounter wird aktualisiert 
         intervalId = setInterval(gameTurn, 800); // gameTurn alle 800 ms aufrufen. Das ganze in einer Variable speichern, damit man die Wiederholungen mit der clearInterval Methode stoppen kann, hier starten wir praktisch die neue rnde
     }
+}
 }
 function winGame() {
     turnCounter.innerHTML = "YES!"; // statt der Runden wird "YES!" angezeigt
@@ -256,6 +258,8 @@ function addElement() {
     var two = document.createElement("img");
     var three = document.createElement("img");
     var four = document.createElement("img");
+    var node = document.createElement("p");
+    node.id ="Schwierigkeitsgrad";
     one.id = "levelone";
     two.id = "leveltwo";
     three.id = "levelthree";
@@ -268,10 +272,15 @@ function addElement() {
     two.src = "2.png";
     three.src = "3.png";
     four.src = "4.png";
+    levelOne = one;
+    levelTwo = two;
+    levelThree = three;
+    levelFour = four;
     document.querySelector("#levelbuttons").appendChild(one);
     document.querySelector("#levelbuttons").appendChild(two);
     document.querySelector("#levelbuttons").appendChild(three);
     document.querySelector("#levelbuttons").appendChild(four);
+    document.querySelector("#levelbuttons").appendChild(node);
     addLevelListeners(one, two, three, four);
 }
 function removeClass() {
