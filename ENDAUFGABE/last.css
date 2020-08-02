@@ -1,64 +1,16 @@
-
-body{
-    background-color: black;
-}
-
-button{
-    background-color: #c33bf5;
-    text-align: center;
-    padding: 100px 100px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #d0f53b;
-}
-
-
 body {
+    background-color: black;
     text-align: center;
 }
 
-#playbutton {
+footer{
     color: white;
-    font-size: 100px;
-    padding: 30px;
-}
-
-#playbutton:hover {
-    opacity: 0.2;
-}
-
-#recordbutton {
-    color: white;
-    font-size: 100px;
-    padding: 30px;
-}
-
-#recordbutton:hover {
-    opacity: 0.2;
-}
-
-
-#trashbutton {
-    color: white;
-    font-size: 100px;
-    padding: 30px;
-}
-
-#trashbutton:hover {
-    opacity: 0.2;
-}
-
-
-
-
-body {
-    background-color: black;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 span {
-    size: 50px;
+    font-size:100px;
+    
 }
 
 h2 {
@@ -71,7 +23,61 @@ p {
     font-family: Arial, Helvetica, sans-serif
 }
 
-button {
-    color: black;
-    font-size:100px;
+#boobutton{
+    display: none;
+    padding: 20px;
+    cursor: pointer;
+}
+
+#laughbutton{
+    display: none;
+    padding: 20px;
+    cursor: pointer;
+}
+
+#duckbutton{
+    display: none;
+    padding: 20px;
+    cursor: pointer;
+}
+
+#boingbutton{
+    display: none;
+    padding: 20px;
+    cursor: pointer;
+}
+
+#applausebutton{
+    display: none;
+    padding: 20px;
+    cursor: pointer;
+}
+
+#boobutton:hover {
+    opacity: 0.6;
+}
+
+#laughbutton:hover {
+    opacity: 0.6;
+}
+
+#duckbutton:hover {
+    opacity: 0.6;
+}
+
+#boingbutton:hover {
+    opacity: 0.6;
+}
+
+#applausebutton:hover {
+    opacity: 0.6;
+}
+
+img {
+    height: 50px;
+    width: 50px;
+}
+
+img:hover {
+    opacity: 0.6;
 }

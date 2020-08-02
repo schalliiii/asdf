@@ -1,1 +1,1 @@
-{"version":3,"file":"präsi.js","sourceRoot":"","sources":["präsi.ts"],"names":[],"mappings":""}
+{"version":3,"file":"präsi.js","sourceRoot":"","sources":["präsi.ts"],"names":[],"mappings":"AAAA,IAAI,aAAa,GAAW,CAAC,CAAC;AAE9B,IAAI,cAAc,GAAW,CAAC,CAAC;AAG/B,IAAI,aAAa,IAAI,cAAc,EAAE;IACrC,OAAO,CAAC,GAAG,CAAC,yBAAyB,CAAC,CAAC;CACtC;KACD,IAAI,aAAa,IAAI,CAAC,EAAC;IACvB,OAAO,CAAC,GAAG,CAAC,yBAAyB,CAAC,CAAC;CACtC;KAAM;IACP,OAAO,CAAC,GAAG,CAAC,uBAAuB,CAAC,CAAC;CACpC"}
