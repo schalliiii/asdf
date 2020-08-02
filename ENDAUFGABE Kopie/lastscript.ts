@@ -9,9 +9,9 @@ let compTurn: boolean; // true: PC spielt Töne ab, false = Spieler darf Töne a
 let intervalId: any; // für spätere Funktion (setInterval)
 let noise: boolean = true; // Gibt an, ob ein Ton gemacht werden soll // wahr: spielt Ton ab - falsch: spielt keinen Ton ab
 let on: boolean = true; // läuft das Spiel
-let win: boolean; // true: Spieler hat gewonnen - false: Spieler hat nicht gewonnen (?)
+let win: boolean; // true: Spieler hat gewonnen - false: Spieler hat nicht gewonnen
 let level: number; // Anzahl der Töne, die zu wiederholen sind
-let startPressed: number = 0; // wie oft wurde startbutton geklickt?
+let startPressed: number = 0; // wie oft wurde Startbutton geklickt
 let playing: boolean = false; // ???
 
 const turnCounter: HTMLElement = document.querySelector("#turn"); // hier wird später reingeschrieben in welchem Spielzug der Spieler ist
@@ -54,7 +54,7 @@ startButton.addEventListener('click', function() { // Wenn Spieler den Playbutto
     return;
   }
   if (on || win) { // Wenn on variable = true oder der Spieler gewonnen hat --- ansonsten passiert nichts beim clicken des startbuttons ???
-    if(startPressed == 0){ // prüfen, ob der Startbutton schon einmal benutzt wurde, ansonsten würde die Konsole einen Fehler werfen, da die buttons schon weg sind ???
+    if(startPressed == 0){ // prüft, ob der Startbutton schon einmal benutzt wurde, ansonsten würde die Konsole einen Fehler anzeigen, da die Buttons schon weg sind
     removeElement("#levelone"); // klickt Spieler den PlayButton werden Level Button nicht mehr angezeigt
     removeElement("#leveltwo"); 
     removeElement("#levelthree"); 
@@ -68,14 +68,14 @@ startButton.addEventListener('click', function() { // Wenn Spieler den Playbutto
 
 function play() { // Funktion um das Spiel zu starten
   playing = true;
-  win = false; // win Variable = false, da der spieler zu beginn noch nicht gewonnen hat???
+  win = false; // win Variable = false, da der spieler zu Beginn noch nicht gewonnen hat
   order = []; // order Array = speichert Töne, die der PC abspielt --> wird immer geleert, damit Töne aus vorherigen Runden entfernt werden
   playerOrder = []; // playerOrder Array = speichert Töne, die der Spieler klickt --> wird geleert, da Spieler noch keine ausgewählt hat
   flash = 0; // Anzahl abgespielter Töne
   intervalId = 0; // ???
   turn = 1; // turn Variable = 1 --> 1. Runde
   turnCounter.innerHTML = "" +1; // Counter zählt mit in welcher Runde wir uns befinden
-  for (var i = 0; i < level; i++) { // for Schleife: wiederholt nachfolgenden code so lange, bis i nicht mehr kleiner ist als 50. i ist zu beginn 0, wird nach jeder wiederholung um eins erhöht. Der nachfolgende Code wird also 50 mal ausgeführt
+  for (var i = 0; i < level; i++) { // for Schleife: wiederholt nachfolgenden Code so lange, wie die level Variable (aktuell) lang ist (welche Wert die level Variable hat)
     order.push(Math.floor(Math.random() * 5) + 1); // order.push: erzeugt Zufallszahlen zwischen 1 und 5, die in das order Array (speichert Töne, die der PC abspielt) gepusht werden
   }
   compTurn = true; // compTurn Variable = true (PC spielt Töne ab)
@@ -86,15 +86,15 @@ function play() { // Funktion um das Spiel zu starten
 function gameTurn() { // Funktion zum Ausführen eines einzelnen Spielzugs des PC's
   on = false; // während der PC Töne abspielt kann Spieler keine eigenen Töne abspielen
 
-  if (flash == turn) { // Entspricht flash Variable (Wie viel Töne gespielt wurden) = turn Variable (der jetzigen Runde) --> um herauszufinden, ob der Zug des PCs vorbei ist (hat der PC für diese Runde alle vorgegebenen Sounds abgespielt)
-    clearInterval(intervalId); // lässt den PC aufhören weiter Sounds abzuspielen
+  if (flash == turn) { // Entspricht flash Variable (Wie viel Töne gespielt wurden) = turn Variable (der jetzigen Runde) --> um herauszufinden, ob der Zug des PCs vorbei ist (hat der PC für diese Runde alle vorgegebenen Töne abgespielt)
+    clearInterval(intervalId); // lässt den PC aufhören weiter Töne abzuspielen
     compTurn = false; // Spieler ist jetzt an der Reihe
     on = true; // ermöglicht dem Spieler Töne abzuspielen
   }
 
   if (compTurn) { // Prüft, ob PC am Zug ist. Falls ja:              // Diese Bedinung ist immer wahr, wenn flash == turn falsch ist
     setTimeout(function () { 
-      if (order[flash] == 1) one(); // prüft, ob das Element aus dem order Array (speichert die vorgegebenen Sounds) eine 1 ist (one = boo) --> wenn ja: ruft die Funktion one auf (spielt boo Ton)
+      if (order[flash] == 1) one(); // prüft, ob das Element aus dem order Array (speichert die vorgegebenen Töne) eine 1 ist (one = boo) --> wenn ja: ruft die Funktion one auf (spielt boo Ton)
       if (order[flash] == 2) two();  // usw.
       if (order[flash] == 3) three(); 
       if (order[flash] == 4) four(); 
@@ -244,30 +244,32 @@ function winGame() { // winGame Funktion wird aufgerufen, wenn Spieler gewonnen 
 
 function playSample(number: number) { // spielt Töne ab, bekommt Nummer (welche wir aus dem playerOrder und dem order Array nehmen) als Argument, damit playSample Funktion weiß, welchen Ton sie abspielen soll
   var sound; // Ton, der zum Schluss abgespielt werden soll
-  if(noise){ // prüft, ob überhaupt ein Sound gespielt werden soll
+  if(noise){ // prüft, ob überhaupt ein Ton gespielt werden soll
   switch(number){ // switch statement: bekommt die Nummer als Argument, die die playSample Funktion als Argument bekommen --> je nach übergebener Nummer wird unterschiedlicher Code ausgeführt
-      case 1: // falls wir die 1 übergeben bekommen:
-        boo.classList.add("highlight"); // ???
-        sound = new Audio("sound_kids_booo.mp3"); // boo Ton in der Variable speichern
-        break; 
-    case 2: // falls wir die 2 übergeben bekommen:
-        laugh.classList.add("highlight");
-        sound = new Audio("sound_laugh.mp3"); // laugh Ton in der Variable speichern
-        break; 
-    case 3: // falls wir die 3 übergeben bekommen:
-        duck.classList.add("highlight");
-        sound = new Audio("sound_squeaking.mp3"); // duck Ton in der Variable speichern
-    case 4: // falls wir die 4 übergeben bekommen:
-        boing.classList.add("highlight");
-        sound = new Audio("sound_boing.mp3"); // boing Ton in der Variable speichern
-        break; // ??? warum kein case 5 ?
-        applause.classList.add("highlight");
-        sound = new Audio("sound_yeah.mp3"); // yeah Ton in der Variable speichern
-        break; 
-    case 6:
-        sound = new Audio("lose.mp3");
-        break;
-  } 
+    case 1: // falls wir die 1 übergeben bekommen:
+      boo.classList.add("highlight");
+      sound = new Audio("sound_kids_booo.mp3"); // den boo sound in der Variable speichern
+      break; 
+  case 2: // falls wir die 2 übergeben bekommen:
+      laugh.classList.add("highlight");
+      sound = new Audio("sound_laugh.mp3"); // laugh Ton in der Variable speichern
+      break; 
+  case 3:  // falls wir die 3 übergeben bekommen:
+      duck.classList.add("highlight");
+      sound = new Audio("sound_squeaking.mp3"); // duck Ton in der Variable speichern
+      break; 
+  case 4: // falls wir die 4 übergeben bekommen:
+      boing.classList.add("highlight");
+      sound = new Audio("sound_boing.mp3"); // boing Ton in der Variable speichern
+      break; 
+  case 5: // falls wir die 5 übergeben bekommen:
+      applause.classList.add("highlight");
+      sound = new Audio("sound_yeah.mp3"); // yeah Ton in der Variable speichern
+      break; 
+  case 6: // ansonsten:
+      sound = new Audio("lose.mp3");
+      break;
+}
 }
   sound.play(); // spielt den Ton ab
   setTimeout(removeClass, 200);
