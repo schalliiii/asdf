@@ -3,52 +3,64 @@ body {
     text-align: center;
 }
 
-footer{
-    color: white;
-    font-family: Arial, Helvetica, sans-serif
-}
-
-span {
-    font-size:100px;
-    
-}
-
 h2 {
     color: white;
     font-family: Arial, Helvetica, sans-serif
 }
 
-p {
-    color: white;
-    font-family: Arial, Helvetica, sans-serif
+span {
+    font-size:100px
+}
+
+.button{
+    width: 100px;
+    height: 100px;
+}
+
+#start{
+    margin-top: 10px;
+    text-align: center !important;
+}
+
+#start2{
+    text-align: center !important;
+    width: 60px;
+    height: 50px;
+}
+
+#soundbuttons, #levelbuttons{
+    text-align: center;
+}
+
+.text{
+    text-align: center;
+}
+
+#checkbox{
+    text-align: center;
 }
 
 #boobutton{
-    display: none;
     padding: 20px;
     cursor: pointer;
 }
 
 #laughbutton{
-    display: none;
     padding: 20px;
     cursor: pointer;
 }
 
 #duckbutton{
-    display: none;
     padding: 20px;
     cursor: pointer;
 }
 
 #boingbutton{
-    display: none;
     padding: 20px;
     cursor: pointer;
 }
 
 #applausebutton{
-    display: none;
     padding: 20px;
     cursor: pointer;
 }
@@ -73,11 +85,63 @@ p {
     opacity: 0.6;
 }
 
-img {
-    height: 50px;
-    width: 50px;
-}
-
 img:hover {
     opacity: 0.6;
+    cursor: pointer;
+}
+
+#turn {
+    text-align: center;
+    background: #330000;
+    color: grey;
+    font-family: courier;
+    font-size: 20px;
+    height: 30px;
+    width: 50px;
+    margin-left: -25px;
+    margin-top: 50px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    position: relative;
+    left: 50%;
+}
+
+#count{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.highlight{
+      background-color: blanchedalmond;
+}
+
+.toggle{
+      margin-top: 10px;
+}
+
+.white {
+      color: white;
+}
+
+
+footer{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+img {
+    height: 50px !important;
+    width: 50px !important;
+    padding: 10px;
+}
+
+#naomi {
+    font-size: 12px;
+}
+
+#Schwierigkeitsgrad {
+    font-size: 15px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif
 }
