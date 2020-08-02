@@ -286,12 +286,15 @@ function removeElement(elementId: any) { // Level Buttons werden entfernt
 
 function addElement() {
   
-  var one = document.createElement("img") as HTMLImageElement;
-  var two = document.createElement("img") as HTMLImageElement;
-  var three = document.createElement("img") as HTMLImageElement;
-  var four = document.createElement("img") as HTMLImageElement;
-  var node = document.createElement("p") as HTMLParagraphElement;
+  var node = document.createElement("p");
+  var text = document.createTextNode("select your level here:");
+  var one = document.createElement("img");
+  var two = document.createElement("img");
+  var three = document.createElement("img");
+  var four = document.createElement("img");
+
   node.id ="Schwierigkeitsgrad";
+  node.appendChild(text);
   one.id ="levelone";
   two.id = "leveltwo";
   three.id = "levelthree";
@@ -308,11 +311,12 @@ function addElement() {
   levelTwo = two;
   levelThree = three;
   levelFour = four;
+  document.querySelector("#levelbuttons").appendChild(node);
   document.querySelector("#levelbuttons").appendChild(one);
   document.querySelector("#levelbuttons").appendChild(two);
   document.querySelector("#levelbuttons").appendChild(three);
   document.querySelector("#levelbuttons").appendChild(four);
-  document.querySelector("#levelbuttons").appendChild(node);
+
   addLevelListeners(one, two, three, four);
 
 }

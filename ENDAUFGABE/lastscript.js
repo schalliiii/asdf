@@ -254,34 +254,39 @@ function removeElement(elementId) {
     element.parentNode.removeChild(element); // löscht das HTML Element
 }
 function addElement() {
+    var node = document.createElement("p");
+    var text = document.createTextNode("select your level here:");
     var one = document.createElement("img");
     var two = document.createElement("img");
     var three = document.createElement("img");
     var four = document.createElement("img");
-    var node = document.createElement("p");
+  
     node.id ="Schwierigkeitsgrad";
-    one.id = "levelone";
+    node.appendChild(text);
+    one.id ="levelone";
     two.id = "leveltwo";
     three.id = "levelthree";
-    four.id = "levelfour";
+    four.id="levelfour";
     one.classList.add("button");
     two.classList.add("button");
     three.classList.add("button");
     four.classList.add("button");
-    one.src = "1.png";
-    two.src = "2.png";
-    three.src = "3.png";
-    four.src = "4.png";
+    one.src ="1.png";
+    two.src="2.png";
+    three.src="3.png";
+    four.src="4.png";
     levelOne = one;
     levelTwo = two;
     levelThree = three;
     levelFour = four;
+    document.querySelector("#levelbuttons").appendChild(node);
     document.querySelector("#levelbuttons").appendChild(one);
     document.querySelector("#levelbuttons").appendChild(two);
     document.querySelector("#levelbuttons").appendChild(three);
     document.querySelector("#levelbuttons").appendChild(four);
-    document.querySelector("#levelbuttons").appendChild(node);
+
     addLevelListeners(one, two, three, four);
+  
 }
 function removeClass() {
     soundButtons.forEach(element => {
